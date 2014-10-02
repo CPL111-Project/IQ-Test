@@ -8,7 +8,7 @@ One problem is, if you want to repeat the game, I can't put return it to the int
 using namespace std;
 int Math()
      {char n[20];
-     int counta; //countq is the question count, countr means number of correct answers
+     int ca; //ca means number of correct answers
      int r, i; // r will be used to randomize the questions, i is used to determine the number of questions that was answered, right or wrong
      int nq[5] = {}; //this is an array. 5 means 5 questions will be asked per game. This means number of questions
      int a[6] = {}; //array for the answers user gave.
@@ -22,7 +22,7 @@ int Math()
     cout<<"\n\t\t\t *******ONE WORD ONLY ******\n\n\t\t\t          ";
     cin>>n;
     system ("cls");
-    counta=0;
+    ca=0;
     i=1;
     start: //this is like a flag where the program will go here again when a whole question is finished.
     srand (time(NULL));
@@ -89,11 +89,11 @@ int Math()
           }
           i++;
           if (i<=5) goto start;
-          if (counta==5)
+          if (ca==5)
           cout<<"\n\nPerfect Score! Great job!"<<endl<<"You got "<<counta<<" out of 5 questions!";
-          else if (counta>=4 && score<5) 
+          else if (ca>=4 && score<5) 
           cout<<"\n\nNot Perfect but still very good!"<<endl<<"You got "<<counta<<" out of 5questions!";
-          else if (counta>=3 && counta<4) 
+          else if (ca>=3 && counta<4) 
           cout<<"\n\nSatisfactory."<<endl<<"You got "<<counta<<" out of 5 questions!";
           else
           cout<<"\n\nYou need to read. :( You can do it!"<<"You got "<<counta<<" out of 5 questions!";
