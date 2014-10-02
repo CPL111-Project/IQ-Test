@@ -1,25 +1,119 @@
+/*Just a trial of putting questions..
+Finished making trial and error.
+One problem is, if you want to repeat the game, I can't put return it to the int main() :(*/
 #include <cstdlib>
 #include <iostream>
 #include <conio.h>
+#include <ctime>
 using namespace std;
-void Math()
-    
-    {float age;
-    system ("cls");
-    cout<<"\n\t\t\t ***************************";
-    cout<<"\n\t\t\t ***PLEASE ENTER YOUR AGE***";
-    cout<<"\n\t\t\t ***************************";
-    cout<<"\n\t\t\t ***********  ***********\n\n\t\t\t          ";
-    cin>>age;}
-    
-void Science()
-     {char g[6];
+int Math()
+     {char n[20];
+     int counta; //countq is the question count, countr means number of correct answers
+     int r, i; // r will be used to randomize the questions, i is used to determine the number of questions that was answered, right or wrong
+     int nq[5] = {}; //this is an array. 5 means 5 questions will be asked per game. This means number of questions
+     int a[6] = {}; //array for the answers user gave.
+     int w, score; //this is for loop so that it will stop once i reaches 21
+     char c;
+     home:
      system ("cls");
     cout<<"\n\t\t\t ***************************";
-    cout<<"\n\t\t\t *PLEASE ENTER YOUR GENDER**";
+    cout<<"\n\t\t\t **PLEASE ENTER YOUR NAME***";
     cout<<"\n\t\t\t ***************************";
-    cout<<"\n\t\t\t ***********  ***********\n\n\t\t\t          ";
-    cin>>g;}
+    cout<<"\n\t\t\t *******ONE WORD ONLY ******\n\n\t\t\t          ";
+    cin>>n;
+    system ("cls");
+    counta=0;
+    i=1;
+    start: //this is like a flag where the program will go here again when a whole question is finished.
+    srand (time(NULL));
+    r=rand()%6+1; // this is a trial so there's only 5 questions. This will be revised once more questions are encoded.
+    nq[i]=r; //After each question, 1 will be added so the operation will end once 6 is reached.
+    for (w=0; w<i; w++) //it will always loop unless the array nq reaches 6, because as said above, it's only until 5. :)
+    if (nq[w]==r) goto start;
+          switch(r)
+          {
+                   case 1:
+                        cout<<"What is 8x12? ";
+                        cin>>a[1];
+                        if (a[1]==96)
+                        {
+                        counta++;
+                        break;}
+                        else
+                        {break;}
+                   case 2:
+                        cout<<"What is 120/3?";
+                        cin>>a[2];
+                        if (a[2]==40)
+                        {
+                        counta++;
+                        break;}
+                        else
+                        {break;}
+                   case 3:
+                        cout<<"What is 23+81?";
+                        cin>>a[3];
+                        if (a[3]==104)
+                        {
+                        counta++;
+                        break;}
+                        else
+                        {break;}
+                   case 4:
+                        cout<<"What is 47-18?";
+                        cin>>a[0];
+                        if (a[0]==29)
+                        {
+                        counta++;
+                        break;}
+                        else
+                        {break;}
+                   case 5:
+                        cout<<"What is the square root of 121?";
+                        cin>>a[4];
+                        if (a[4]==11)
+                        {
+                        counta++;
+                        break;}
+                        else
+                        {break;}
+                   case 6:
+                        cout<<"What is the cube root of 8?";
+                        cin>>a[5];
+                        if (a[5]==2)
+                        {
+                        counta++;
+                        break;}
+                        else
+                        {break;}         
+          }
+          i++;
+          if (i<=5) goto start;
+          if (counta==5)
+          cout<<"\n\nPerfect Score! Great job!"<<endl<<"You got "<<counta<<" out of 5 questions!";
+          else if (counta>=4 && score<5) 
+          cout<<"\n\nNot Perfect but still very good!"<<endl<<"You got "<<counta<<" out of 5questions!";
+          else if (counta>=3 && counta<4) 
+          cout<<"\n\nSatisfactory."<<endl<<"You got "<<counta<<" out of 5 questions!";
+          else
+          cout<<"\n\nYou need to read. :( You can do it!"<<"You got "<<counta<<" out of 5 questions!";
+          cout<<"\n\nWanna play again? (Y/N)";
+          c=toupper(getch());
+          if (c=='Y') {goto home;}
+          else if (c=='N') {exit(1);}
+          else
+          {cout<<"Wrong Selection!";getch();}
+          
+}
+
+void Science()
+     {char n[20];
+     system ("cls");
+    cout<<"\n\t\t\t ***************************";
+    cout<<"\n\t\t\t **PLEASE ENTER YOUR NAME***";
+    cout<<"\n\t\t\t ***************************";
+    cout<<"\n\t\t\t *******ONE WORD ONLY ******\n\n\t\t\t          ";
+    cin>>n;}
     
 void English()
      {char n[20];
@@ -56,9 +150,6 @@ int main()
     else if (c=='Q'){Quit();}
     else
     {cout<<"!!!!WRONG SELECTION!!!!";getch();}
-    
-    
-    
     
     getch();
 }
