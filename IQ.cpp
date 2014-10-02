@@ -12,7 +12,7 @@ int Math()
      int r, i; // r will be used to randomize the questions, i is used to determine the number of questions that was answered, right or wrong
      int nq[5] = {}; //this is an array. 5 means 5 questions will be asked per game. This means number of questions
      int a[6] = {}; //array for the answers user gave.
-     int w, score; //this is for loop so that it will stop once i reaches 21
+     int w; //this is for loop so that it will stop once i reaches 6
      char c;
      home:
      system ("cls");
@@ -37,7 +37,7 @@ int Math()
                         cin>>a[1];
                         if (a[1]==96)
                         {
-                        counta++;
+                        ca++;
                         break;}
                         else
                         {break;}
@@ -46,7 +46,7 @@ int Math()
                         cin>>a[2];
                         if (a[2]==40)
                         {
-                        counta++;
+                        ca++;
                         break;}
                         else
                         {break;}
@@ -55,7 +55,7 @@ int Math()
                         cin>>a[3];
                         if (a[3]==104)
                         {
-                        counta++;
+                        ca++;
                         break;}
                         else
                         {break;}
@@ -64,7 +64,7 @@ int Math()
                         cin>>a[0];
                         if (a[0]==29)
                         {
-                        counta++;
+                        ca++;
                         break;}
                         else
                         {break;}
@@ -73,7 +73,7 @@ int Math()
                         cin>>a[4];
                         if (a[4]==11)
                         {
-                        counta++;
+                        ca++;
                         break;}
                         else
                         {break;}
@@ -82,7 +82,7 @@ int Math()
                         cin>>a[5];
                         if (a[5]==2)
                         {
-                        counta++;
+                        ca++;
                         break;}
                         else
                         {break;}         
@@ -90,13 +90,13 @@ int Math()
           i++;
           if (i<=5) goto start;
           if (ca==5)
-          cout<<"\n\nPerfect Score! Great job!"<<endl<<"You got "<<counta<<" out of 5 questions!";
-          else if (ca>=4 && score<5) 
-          cout<<"\n\nNot Perfect but still very good!"<<endl<<"You got "<<counta<<" out of 5questions!";
-          else if (ca>=3 && counta<4) 
-          cout<<"\n\nSatisfactory."<<endl<<"You got "<<counta<<" out of 5 questions!";
+          cout<<"\n\nPerfect Score! Great job!"<<endl<<"You got "<<ca<<" out of 5 questions!";
+          else if (ca>=4 && ca<5) 
+          cout<<"\n\nNot Perfect but still very good!"<<endl<<"You got "<<ca<<" out of 5questions!";
+          else if (ca>=3 && ca<4) 
+          cout<<"\n\nSatisfactory."<<endl<<"You got "<<ca<<" out of 5 questions!";
           else
-          cout<<"\n\nYou need to read. :( You can do it!"<<"You got "<<counta<<" out of 5 questions!";
+          cout<<"\n\nYou need to read. :( You can do it!"<<"You got "<<ca<<" out of 5 questions!";
           cout<<"\n\nWanna play again? (Y/N)";
           c=toupper(getch());
           if (c=='Y') {goto home;}
