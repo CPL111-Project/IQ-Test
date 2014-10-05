@@ -1,6 +1,3 @@
-/*Just a trial of putting questions..
-Finished making trial and error.
-One problem is, if you want to repeat the game, I can't put return it to the int main() :(*/
 #include <cstdlib>
 #include <iostream>
 #include <conio.h>
@@ -12,7 +9,7 @@ int Math()
      int r, i; // r will be used to randomize the questions, i is used to determine the number of questions that was answered, right or wrong
      int nq[5] = {}; //this is an array. 5 means 5 questions will be asked per game. This means number of questions
      int a[6] = {}; //array for the answers user gave.
-     int w; //this is for loop so that it will stop once i reaches 6
+     int w, score;
      char c;
      home:
      system ("cls");
@@ -26,7 +23,7 @@ int Math()
     i=1;
     start: //this is like a flag where the program will go here again when a whole question is finished.
     srand (time(NULL));
-    r=rand()%6+1; // this is a trial so there's only 5 questions. This will be revised once more questions are encoded.
+    r=rand()%6+1; // to randomize the questions.
     nq[i]=r; //After each question, 1 will be added so the operation will end once 6 is reached.
     for (w=0; w<i; w++) //it will always loop unless the array nq reaches 6, because as said above, it's only until 5. :)
     if (nq[w]==r) goto start;
@@ -42,7 +39,7 @@ int Math()
                         else
                         {break;}
                    case 2:
-                        cout<<"What is 120/3?";
+                        cout<<"What is 120/3? ";
                         cin>>a[2];
                         if (a[2]==40)
                         {
@@ -51,7 +48,7 @@ int Math()
                         else
                         {break;}
                    case 3:
-                        cout<<"What is 23+81?";
+                        cout<<"What is 23+81? ";
                         cin>>a[3];
                         if (a[3]==104)
                         {
@@ -60,7 +57,7 @@ int Math()
                         else
                         {break;}
                    case 4:
-                        cout<<"What is 47-18?";
+                        cout<<"What is 47-18? ";
                         cin>>a[0];
                         if (a[0]==29)
                         {
@@ -69,7 +66,7 @@ int Math()
                         else
                         {break;}
                    case 5:
-                        cout<<"What is the square root of 121?";
+                        cout<<"What is the square root of 121? ";
                         cin>>a[4];
                         if (a[4]==11)
                         {
@@ -78,7 +75,7 @@ int Math()
                         else
                         {break;}
                    case 6:
-                        cout<<"What is the cube root of 8?";
+                        cout<<"What is the cube root of 8? ";
                         cin>>a[5];
                         if (a[5]==2)
                         {
@@ -90,13 +87,13 @@ int Math()
           i++;
           if (i<=5) goto start;
           if (ca==5)
-          cout<<"\n\nPerfect Score! Great job!"<<endl<<"You got "<<ca<<" out of 5 questions!";
+          cout<<"\n\nPerfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
           else if (ca>=4 && ca<5) 
-          cout<<"\n\nNot Perfect but still very good!"<<endl<<"You got "<<ca<<" out of 5questions!";
+          cout<<"\n\nNot Perfect but still very good! "<<endl<<"You got "<<ca<<" out of 5questions!";
           else if (ca>=3 && ca<4) 
-          cout<<"\n\nSatisfactory."<<endl<<"You got "<<ca<<" out of 5 questions!";
+          cout<<"\n\nSatisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
           else
-          cout<<"\n\nYou need to read. :( You can do it!"<<"You got "<<ca<<" out of 5 questions!";
+          cout<<"\n\nYou need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
           cout<<"\n\nWanna play again? (Y/N)";
           c=toupper(getch());
           if (c=='Y') {goto home;}
