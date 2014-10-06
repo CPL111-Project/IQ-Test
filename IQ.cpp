@@ -102,14 +102,15 @@ int Math()
           }
           i++;
           if (i<=5) goto start;
+          system("cls");
           if (ca==5)
-          cout<<"\n\nPerfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
+          cout<<"Perfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
           else if (ca>=4 && ca<5) 
-          cout<<"\n\nNot Perfect but still very good! "<<endl<<"You got "<<ca<<" out of 5questions!";
+          cout<<"Not Perfect but still very good! "<<endl<<"You got "<<ca<<" out of 5questions!";
           else if (ca>=3 && ca<4) 
-          cout<<"\n\nSatisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
+          cout<<"Satisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
           else
-          cout<<"\n\nYou need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
+          cout<<"You need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
           cout<<"\n\nWanna play again? (Y/N)";
           c=toupper(getch());
           if (c=='Y') {goto home;}
@@ -161,18 +162,100 @@ void Science()
     if (nq[w]==r) goto start;
           switch(r)
           {
-
+                        case 1:
+                        system("cls");
+                        cout<<"\n\n\t\t\tWhat is the innermost layer of the Earth? "<<endl;
+                        cout<<"\n\t\t\t A. Crust \t\t B. Inner Core"<<endl;
+                        cout<<"\n\t\t\t C. Outer Core \t\t D. Mantle"<<endl;
+                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cin>>a[0];
+                        if (a[0]=='B')
+                        {
+                        ca++;
+                        break;}
+                        else
+                        {break;}
+                        
+                        case 2:
+                        system("cls");
+                        cout<<"\n\n\t\t\t "<<endl;
+                        cout<<"\n\t\t\t A.  \t\t B. "<<endl;
+                        cout<<"\n\t\t\t C.  \t\t D. "<<endl;
+                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cin>>a[1];
+                        if (a[1]=='B')
+                        {
+                        ca++;
+                        break;}
+                        else
+                        {break;}
+                        
+                        case 3:
+                        system("cls");
+                        cout<<"\n\n\t\t\t "<<endl;
+                        cout<<"\n\t\t\t A. \t\t B. "<<endl;
+                        cout<<"\n\t\t\t C. \t\t D. "<<endl;
+                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cin>>a[2];
+                        if (a[2]=='B')
+                        {
+                        ca++;
+                        break;}
+                        else
+                        {break;}
+                        
+                        case 4:
+                        system("cls");
+                        cout<<"\n\n\t\t\t "<<endl;
+                        cout<<"\n\t\t\t A. \t\t B."<<endl;
+                        cout<<"\n\t\t\t C. \t\t D."<<endl;
+                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cin>>a[3];
+                        if (a[3]=='B')
+                        {
+                        ca++;
+                        break;}
+                        else
+                        {break;}
+                        
+                        case 5:
+                        system("cls");
+                        cout<<"\n\n\t\t\t "<<endl;
+                        cout<<"\n\t\t\t A. \t\t B."<<endl;
+                        cout<<"\n\t\t\t C. \t\t D."<<endl;
+                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cin>>a[4];
+                        if (a[4]=='B')
+                        {
+                        ca++;
+                        break;}
+                        else
+                        {break;}
+                        case 6:
+                        system("cls");cout<<"\n\n\t\t\t "<<endl;
+                        cout<<"\n\t\t\t A. \t\t B."<<endl;
+                        cout<<"\n\t\t\t C. \t\t D."<<endl;
+                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cin>>a[5];
+                        if (a[5]=='B')
+                        {
+                        ca++;
+                        break;}
+                        else
+                        {break;}
+                        
           }
     i++;
     if (i<=5) goto start;
+    system("cls");
     if (ca==5)
-    cout<<"\n\nPerfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
+    cout<<"Perfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
     else if (ca>=4 && ca<5) 
-    cout<<"\n\nNot Perfect but still very good! "<<endl<<"You got "<<ca<<" out of 5questions!";
+    cout<<"Not Perfect but still very good! "<<endl<<"You got "<<ca<<" out of 5questions!";
     else if (ca>=3 && ca<4) 
-    cout<<"\n\nSatisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
+    cout<<"Satisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
     else
-    cout<<"\n\nYou need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
+    cout<<"You need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
     cout<<"\n\nWanna play again? (Y/N)";
     c=toupper(getch());
     if (c=='Y') {goto home;}
@@ -283,14 +366,15 @@ void English()
           }
     i++;
     if (i<=5) goto start;
+    system("cls");
     if (ca==5)
-    cout<<"\n\nPerfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
+    cout<<"Perfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
     else if (ca>=4 && ca<5) 
-    cout<<"\n\nNot Perfect but still very good! "<<endl<<"You got "<<ca<<" out of 5questions!";
+    cout<<"Not Perfect but still very good! "<<endl<<"You got "<<ca<<" out of 5questions!";
     else if (ca>=3 && ca<4) 
-    cout<<"\n\nSatisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
+    cout<<"Satisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
     else
-    cout<<"\n\nYou need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
+    cout<<"You need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
     cout<<"\n\nWanna play again? (Y/N)";
     c=toupper(getch());
     if (c=='Y') {goto home;}
