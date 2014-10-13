@@ -1,20 +1,15 @@
-/*Just a trial of putting questions..
-Finished making trial and error.
-One problem is, if you want to repeat the game, I can't put return it to the int main() :(*/
 #include <cstdlib>
 #include <iostream>
 #include <conio.h>
 #include <ctime>
 using namespace std;
-int Math()
-     {char n[20];
-     int ca; //ca means number of correct answers
-     int r, i; // r will be used to randomize the questions, i is used to determine the number of questions that was answered, right or wrong
-     int nq[5] = {}; //this is an array. 5 means 5 questions will be asked per game. This means number of questions
-     int a[6] = {}; //array for the answers user gave.
-     int w, score;
+int Math(){
+     char n[20]; //name
+     int ca; //correct answers
+     int r, i;
+     int a[6]; //array for answers
      char c;
-     home:
+     int visited[6]; //array for used or visited questions
     system ("cls");
     {cout<<"\n\t\t\t ***************************";
     cout<<"\n\t\t\t **PLEASE ENTER YOUR NAME***";
@@ -35,17 +30,17 @@ int Math()
     cout<<"\n\t\t         *******Press ENTER to continue********";
     getch();}
     system ("cls");
-    ca=0;
     i=1;
-    start: //this is like a flag where the program will go here again when a whole question is finished.
-    srand (time(NULL));
-    r=rand()%6+1; // this is a trial so there's only 5 questions. This will be revised once more questions are encoded.
-    nq[i]=r; //After each question, 1 will be added so the operation will end once 6 is reached.
-    for (w=0; w<i; w++) //it will always loop unless the array nq reaches 6, because as said above, it's only until 5. :)
-    if (nq[w]==r) goto start;
+    ca=0;
+    srand (time(0));
+    do {
+    r=rand()%6;
+    while (visited[r]!=0){
+    r=rand()%6;}
+    visited[r] = 1;
           switch(r)
           {
-                   case 1:
+                   case 0:
                         cout<<"What is 8x12? ";
                         cin>>a[1];
                         if (a[1]==96)
@@ -54,7 +49,7 @@ int Math()
                         break;}
                         else
                         {break;}
-                   case 2:
+                   case 1:
                         cout<<"What is 120/3? ";
                         cin>>a[2];
                         if (a[2]==40)
@@ -63,7 +58,7 @@ int Math()
                         break;}
                         else
                         {break;}
-                   case 3:
+                   case 2:
                         cout<<"What is 23+81? ";
                         cin>>a[3];
                         if (a[3]==104)
@@ -72,7 +67,7 @@ int Math()
                         break;}
                         else
                         {break;}
-                   case 4:
+                   case 3:
                         cout<<"What is 47-18? ";
                         cin>>a[0];
                         if (a[0]==29)
@@ -81,7 +76,7 @@ int Math()
                         break;}
                         else
                         {break;}
-                   case 5:
+                   case 4:
                         cout<<"What is the square root of 121? ";
                         cin>>a[4];
                         if (a[4]==11)
@@ -90,7 +85,7 @@ int Math()
                         break;}
                         else
                         {break;}
-                   case 6:
+                   case 5:
                         cout<<"What is the cube root of 8? ";
                         cin>>a[5];
                         if (a[5]==2)
@@ -101,7 +96,7 @@ int Math()
                         {break;}         
           }
           i++;
-          if (i<=5) goto start;
+          }while (i<=5);
           system("cls");
           if (ca==5)
           cout<<"Perfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
@@ -110,25 +105,22 @@ int Math()
           else if (ca>=3 && ca<4) 
           cout<<"Satisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
           else
-          cout<<"You need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
+          cout<<"You need to read.  You can do it! "<<"You got "<<ca<<" out of 5 questions!";
           cout<<"\n\nWanna play again? (Y/N)";
           c=toupper(getch());
-          if (c=='Y') {goto home;}
+          if (c=='Y') {return 0;}
           else if (c=='N') {exit(1);}
           else
           {cout<<"Wrong Selection!";getch();}
           
 }
-
-void Science()
-     {char n[20];
+int Science(){
+     char n[20];
      int ca;
      int r, i;
-     int nq[5] = {};
-     char a[6] = {}; // letter
-     int w, score;
+     char a[6]; //letter
      char c;
-     home:
+     int visited[6];
      system ("cls");
     {cout<<"\n\t\t\t ***************************";
     cout<<"\n\t\t\t **PLEASE ENTER YOUR NAME***";
@@ -152,17 +144,17 @@ void Science()
     cout<<"\n\t\t         *******Press ENTER to continue********";
     getch();}
     system("cls");
-    ca=0;
     i=1;
-    start:
-    srand (time(NULL));
-    r=rand()%6+1;
-    nq[i]=r;
-    for (w=0; w<i; w++)
-    if (nq[w]==r) goto start;
+    ca=0;
+    srand (time(0));
+    do {
+    r=rand()%6;
+    while (visited[r]!=0){
+    r=rand()%6;}
+    visited[r] = 1;
           switch(r)
           {
-                        case 1:
+                        case 0:
                         system("cls");
                         cout<<"\n\n\t\t\tWhat is the innermost layer of the Earth? "<<endl;
                         cout<<"\n\t\t\t A. Crust \t\t B. Inner Core"<<endl;
@@ -176,11 +168,11 @@ void Science()
                         else
                         {break;}
                         
-                        case 2:
+                        case 1:
                         system("cls");
-                        cout<<"\n\n\t\t\t "<<endl;
-                        cout<<"\n\t\t\t A.  \t\t B. "<<endl;
-                        cout<<"\n\t\t\t C.  \t\t D. "<<endl;
+                        cout<<"\n\n\t\t\t Which organelle is known as “the cell’s brain”?"<<endl;
+                        cout<<"\n\t\t\t A.Ribosome  \t\t B.Nucleus "<<endl;
+                        cout<<"\n\t\t\t C.Mitochondrion  \t\t D.Funny bone "<<endl;
                         cout<<"\n\t\t\t\t Your answer is: ";
                         cin>>a[1];
                         if (a[1]=='B')
@@ -190,14 +182,28 @@ void Science()
                         else
                         {break;}
                         
-                        case 3:
+                        case 2:
                         system("cls");
-                        cout<<"\n\n\t\t\t "<<endl;
-                        cout<<"\n\t\t\t A. \t\t B. "<<endl;
-                        cout<<"\n\t\t\t C. \t\t D. "<<endl;
+                        cout<<"\n\n\t\t\t Which of the following is not part of a bacterial cell"<<endl;
+                        cout<<"\n\t\t\t A.Nucleus \t\t B.Ribosome "<<endl;
+                        cout<<"\n\t\t\t C.Protein \t\t D.Cytoplasm "<<endl;
                         cout<<"\n\t\t\t\t Your answer is: ";
                         cin>>a[2];
-                        if (a[2]=='B')
+                        if (a[2]=='A')
+                        {
+                        ca++;
+                        break;}
+                        else
+                        {break;}
+                        
+                        case 3:
+                        system("cls");
+                        cout<<"\n\n\t\t\t The mitochondrion plays an important role as the cell’s ...."<<endl;
+                        cout<<"\n\t\t\t A. GateKeeper \t\t B. Infection Fighter"<<endl;
+                        cout<<"\n\t\t\t C. Power Plant \t\t D. Molecular tether"<<endl;
+                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cin>>a[3];
+                        if (a[3]=='C')
                         {
                         ca++;
                         break;}
@@ -206,38 +212,24 @@ void Science()
                         
                         case 4:
                         system("cls");
-                        cout<<"\n\n\t\t\t "<<endl;
-                        cout<<"\n\t\t\t A. \t\t B."<<endl;
-                        cout<<"\n\t\t\t C. \t\t D."<<endl;
-                        cout<<"\n\t\t\t\t Your answer is: ";
-                        cin>>a[3];
-                        if (a[3]=='B')
-                        {
-                        ca++;
-                        break;}
-                        else
-                        {break;}
-                        
-                        case 5:
-                        system("cls");
-                        cout<<"\n\n\t\t\t "<<endl;
-                        cout<<"\n\t\t\t A. \t\t B."<<endl;
-                        cout<<"\n\t\t\t C. \t\t D."<<endl;
+                        cout<<"\n\n\t\t\t Compared to felsic igneous rocks, mafic igneous rocks contain greater amounts of"<<endl;
+                        cout<<"\n\t\t\t A. white quartz \t\t B. Aluminum"<<endl;
+                        cout<<"\n\t\t\t C. pink feldspar\t\t D. Iron"<<endl;
                         cout<<"\n\t\t\t\t Your answer is: ";
                         cin>>a[4];
-                        if (a[4]=='B')
+                        if (a[4]=='D')
                         {
                         ca++;
                         break;}
                         else
                         {break;}
-                        case 6:
-                        system("cls");cout<<"\n\n\t\t\t "<<endl;
-                        cout<<"\n\t\t\t A. \t\t B."<<endl;
-                        cout<<"\n\t\t\t C. \t\t D."<<endl;
+                        case 5:
+                        system("cls");cout<<"\n\n\t\t\t What causes night and day?"<<endl;
+                        cout<<"\n\t\t\t A. The earth spins on its axis. \t\t B. The earth moves around the sun."<<endl;
+                        cout<<"\n\t\t\t C. Clouds block out the sun's light.\t\t D. The sun goes around the earth."<<endl;
                         cout<<"\n\t\t\t\t Your answer is: ";
                         cin>>a[5];
-                        if (a[5]=='B')
+                        if (a[5]=='A')
                         {
                         ca++;
                         break;}
@@ -245,8 +237,8 @@ void Science()
                         {break;}
                         
           }
-    i++;
-    if (i<=5) goto start;
+          i++;
+          }while (i<=5);
     system("cls");
     if (ca==5)
     cout<<"Perfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
@@ -255,24 +247,22 @@ void Science()
     else if (ca>=3 && ca<4) 
     cout<<"Satisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
     else
-    cout<<"You need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
+    cout<<"You need to read.  You can do it! "<<"You got "<<ca<<" out of 5 questions!";
     cout<<"\n\nWanna play again? (Y/N)";
     c=toupper(getch());
-    if (c=='Y') {goto home;}
+    if (c=='Y') {return 0;}
     else if (c=='N') {exit(1);}
     else
     {cout<<"Wrong Selection!";getch();}
     }
     
-void English()
+int English()
      {char n[20];
      int ca;
      int r, i;
-     int nq[5] = {};
      string a[6] = {}; // word
-     int w, score;
      char c;
-     home:
+     int visited[6] = {};
      system ("cls");
     {cout<<"\n\t\t\t ***************************";
     cout<<"\n\t\t\t **PLEASE ENTER YOUR NAME***";
@@ -294,17 +284,17 @@ void English()
     cout<<"\n\t\t         *******Press ENTER to continue********";
     getch();}
     system("cls");
-    ca=0;
     i=1;
-    start:
-    srand (time(NULL));
-    r=rand()%6+1;
-    nq[i]=r;
-    for (w=0; w<i; w++)
-    if (nq[w]==r) goto start;
+    ca=0;
+    srand (time(0));
+    do {
+    r=rand()%6;
+    while (visited[r]!=0){
+    r=rand()%6;}
+    visited[r] = 1;
           switch(r)
           {
-                        case 1:
+                        case 0:
                         cout<<"What is the past tense of the word GO? ";
                         cin>>a[0];
                         if (a[0]=="Went")
@@ -314,7 +304,7 @@ void English()
                         else
                         {break;}
                         
-                        case 2:
+                        case 1:
                         cout<<"What is the plural form of SHEEP? ";
                         cin>>a[1];
                         if (a[1]=="Sheep")
@@ -324,7 +314,7 @@ void English()
                         else
                         {break;}
                         
-                        case 3:
+                        case 2:
                         cout<<"What do you call a verb that can function as a noun? ";
                         cin>>a[2];
                         if (a[2]=="Gerund")
@@ -334,7 +324,7 @@ void English()
                         else
                         {break;}
                         
-                        case 4:
+                        case 3:
                         cout<<"In a broad sense, verbs can either be an action verb or a/an? ";
                         cin>>a[3];
                         if (a[3]=="Linking")
@@ -344,7 +334,7 @@ void English()
                         else
                         {break;}
                         
-                        case 5:
+                        case 4:
                         cout<<"What is longer than a short story but shorter than a novel? ";
                         cin>>a[4];
                         if (a[4]=="Novelette")
@@ -354,18 +344,19 @@ void English()
                         else
                         {break;}
                         
-                        case 6:
-                        cout<<"Who is the author of the classics Romeo and Juliet, and Macbeth?(Surname only) ";
+                        case 5:
+                        cout<<"Who is the author of the classics Romeo and Juliet, and Macbeth?(Surname only)\n";
                         cin>>a[5];
                         if (a[5]=="Shakespeare")
                         {
                         ca++;
                         break;}
                         else
-                        {break;} 
-          }
+                        {break;}
+              }
     i++;
-    if (i<=5) goto start;
+    }while (i<=5);
+    {
     system("cls");
     if (ca==5)
     cout<<"Perfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
@@ -374,13 +365,14 @@ void English()
     else if (ca>=3 && ca<4) 
     cout<<"Satisfactory. "<<endl<<"You got "<<ca<<" out of 5 questions!";
     else
-    cout<<"You need to read. :( You can do it! "<<"You got "<<ca<<" out of 5 questions!";
+    cout<<"You need to read.  You can do it! "<<"You got "<<ca<<" out of 5 questions!";
     cout<<"\n\nWanna play again? (Y/N)";
     c=toupper(getch());
-    if (c=='Y') {goto home;}
+    if (c=='Y') {return 0;}
     else if (c=='N') {exit(1);}
     else
     {cout<<"Wrong Selection!";getch();}
+    }
           }
 void Quit()
      {exit(1);}
