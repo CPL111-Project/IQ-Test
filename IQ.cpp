@@ -4,12 +4,11 @@
 #include <ctime>
 using namespace std;
 int Math(){
-     char n[20]; //name
-     int ca; //correct answers
-     int r, i;
-     int a[6]; //array for answers
-     char c;
-     int visited[6]; //array for used or visited questions
+    char n[20];
+    int i, ca, r;
+    int a[6];
+    int num[6]={0,1,2,3,4,5};
+    char c;
     system ("cls");
     {cout<<"\n\t\t\t ***************************";
     cout<<"\n\t\t\t **PLEASE ENTER YOUR NAME***";
@@ -30,15 +29,12 @@ int Math(){
     cout<<"\n\t\t         *******Press ENTER to continue********";
     getch();}
     system ("cls");
-    i=1;
+    i=0;
     ca=0;
     srand (time(0));
+    random_shuffle(num, num+6);
     do {
-    r=rand()%6;
-    while (visited[r]!=0){
-    r=rand()%6;}
-    visited[r] = 1;
-          switch(r)
+          switch(num[i])
           {
                    case 0:
                         cout<<"What is 8x12? ";
@@ -96,7 +92,7 @@ int Math(){
                         {break;}         
           }
           i++;
-          }while (i<=5);
+          }while (i<5);
           system("cls");
           if (ca==5)
           cout<<"Perfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
@@ -108,19 +104,18 @@ int Math(){
           cout<<"You need to read.  You can do it! "<<"You got "<<ca<<" out of 5 questions!";
           cout<<"\n\nWanna play again? (Y/N)";
           c=toupper(getch());
-          if (c=='Y') {return 0;}
+          if (c=='Y') {main();}
           else if (c=='N') {exit(1);}
           else
           {cout<<"Wrong Selection!";getch();}
           
 }
 int Science(){
-     char n[20];
-     int ca;
-     int r, i;
-     char a[6]; //letter
-     char c;
-     int visited[6];
+    char n[20];
+    int i, ca, r;
+    char a[6];
+    int num[6]={0,1,2,3,4,5};
+    char c;
      system ("cls");
     {cout<<"\n\t\t\t ***************************";
     cout<<"\n\t\t\t **PLEASE ENTER YOUR NAME***";
@@ -144,15 +139,12 @@ int Science(){
     cout<<"\n\t\t         *******Press ENTER to continue********";
     getch();}
     system("cls");
-    i=1;
+    i=0;
     ca=0;
     srand (time(0));
+    random_shuffle(num, num+6);
     do {
-    r=rand()%6;
-    while (visited[r]!=0){
-    r=rand()%6;}
-    visited[r] = 1;
-          switch(r)
+          switch(num[i])
           {
                         case 0:
                         system("cls");
@@ -238,7 +230,7 @@ int Science(){
                         
           }
           i++;
-          }while (i<=5);
+          }while (i<5);
     system("cls");
     if (ca==5)
     cout<<"Perfect Score! Great job! "<<endl<<"You got "<<ca<<" out of 5 questions!";
@@ -250,19 +242,18 @@ int Science(){
     cout<<"You need to read.  You can do it! "<<"You got "<<ca<<" out of 5 questions!";
     cout<<"\n\nWanna play again? (Y/N)";
     c=toupper(getch());
-    if (c=='Y') {return 0;}
+    if (c=='Y') {main();}
     else if (c=='N') {exit(1);}
     else
     {cout<<"Wrong Selection!";getch();}
     }
     
-int English()
-     {char n[20];
-     int ca;
-     int r, i;
-     string a[6] = {}; // word
-     char c;
-     int visited[6] = {};
+int English(){
+    char n[20];
+    int i, ca, r;
+    string a[6];
+    int num[6]={0,1,2,3,4,5};
+    char c;
      system ("cls");
     {cout<<"\n\t\t\t ***************************";
     cout<<"\n\t\t\t **PLEASE ENTER YOUR NAME***";
@@ -284,17 +275,14 @@ int English()
     cout<<"\n\t\t         *******Press ENTER to continue********";
     getch();}
     system("cls");
-    i=1;
+    i=0;
     ca=0;
     srand (time(0));
+    random_shuffle(num, num+6);
     do {
-    r=rand()%6;
-    while (visited[r]!=0){
-    r=rand()%6;}
-    visited[r] = 1;
-          switch(r)
+          switch(num[i])
           {
-                        case 0:
+                        case 1:
                         cout<<"What is the past tense of the word GO? ";
                         cin>>a[0];
                         if (a[0]=="Went")
@@ -304,7 +292,7 @@ int English()
                         else
                         {break;}
                         
-                        case 1:
+                        case 2:
                         cout<<"What is the plural form of SHEEP? ";
                         cin>>a[1];
                         if (a[1]=="Sheep")
@@ -314,7 +302,7 @@ int English()
                         else
                         {break;}
                         
-                        case 2:
+                        case 3:
                         cout<<"What do you call a verb that can function as a noun? ";
                         cin>>a[2];
                         if (a[2]=="Gerund")
@@ -324,7 +312,7 @@ int English()
                         else
                         {break;}
                         
-                        case 3:
+                        case 4:
                         cout<<"In a broad sense, verbs can either be an action verb or a/an? ";
                         cin>>a[3];
                         if (a[3]=="Linking")
@@ -334,7 +322,7 @@ int English()
                         else
                         {break;}
                         
-                        case 4:
+                        case 5:
                         cout<<"What is longer than a short story but shorter than a novel? ";
                         cin>>a[4];
                         if (a[4]=="Novelette")
@@ -344,7 +332,7 @@ int English()
                         else
                         {break;}
                         
-                        case 5:
+                        case 6:
                         cout<<"Who is the author of the classics Romeo and Juliet, and Macbeth?(Surname only)\n";
                         cin>>a[5];
                         if (a[5]=="Shakespeare")
@@ -355,7 +343,7 @@ int English()
                         {break;}
               }
     i++;
-    }while (i<=5);
+    }while (i<5);
     {
     system("cls");
     if (ca==5)
@@ -368,7 +356,7 @@ int English()
     cout<<"You need to read.  You can do it! "<<"You got "<<ca<<" out of 5 questions!";
     cout<<"\n\nWanna play again? (Y/N)";
     c=toupper(getch());
-    if (c=='Y') {return 0;}
+    if (c=='Y') {main();}
     else if (c=='N') {exit(1);}
     else
     {cout<<"Wrong Selection!";getch();}
