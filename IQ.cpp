@@ -3,11 +3,14 @@
 #include <conio.h>
 #include <ctime>
 using namespace std;
+
+int main();
+
 int Math(){
-    char n[20];
-    int i, ca, r;
-    int a[6];
-    int num[6]={0,1,2,3,4,5};
+    char n[20]; //name
+    int i, ca;
+    int a[6]; //array for answers
+    int num[6]={0,1,2,3,4,5}; //array for question number
     char c;
     system ("cls");
     {cout<<"\n\t\t\t ***************************";
@@ -148,10 +151,10 @@ int Science(){
           {
                         case 0:
                         system("cls");
-                        cout<<"\n\n\t\t\tWhat is the innermost layer of the Earth? "<<endl;
-                        cout<<"\n\t\t\t A. Crust \t\t B. Inner Core"<<endl;
-                        cout<<"\n\t\t\t C. Outer Core \t\t D. Mantle"<<endl;
-                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cout<<"\n\n\t\tWhat is the innermost layer of the Earth? "<<endl;
+                        cout<<"\n\t\t A. Crust \t\t B. Inner Core"<<endl;
+                        cout<<"\n\t\t C. Outer Core \t\t D. Mantle"<<endl;
+                        cout<<"\n\t\t\t Your answer is: ";
                         cin>>a[0];
                         if (a[0]=='B')
                         {
@@ -162,10 +165,10 @@ int Science(){
                         
                         case 1:
                         system("cls");
-                        cout<<"\n\n\t\t\t Which organelle is known as “the cell’s brain”?"<<endl;
-                        cout<<"\n\t\t\t A.Ribosome  \t\t B.Nucleus "<<endl;
-                        cout<<"\n\t\t\t C.Mitochondrion  \t\t D.Funny bone "<<endl;
-                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cout<<"\n\n\t\t Which organelle is known as 'the cell's brain'?"<<endl;
+                        cout<<"\n\t\t A.Ribosome  \t\t\t B.Nucleus "<<endl;
+                        cout<<"\n\t\t C.Mitochondrion  \t\t D.Funny bone "<<endl;
+                        cout<<"\n\t\t\t Your answer is: ";
                         cin>>a[1];
                         if (a[1]=='B')
                         {
@@ -176,10 +179,10 @@ int Science(){
                         
                         case 2:
                         system("cls");
-                        cout<<"\n\n\t\t\t Which of the following is not part of a bacterial cell"<<endl;
-                        cout<<"\n\t\t\t A.Nucleus \t\t B.Ribosome "<<endl;
-                        cout<<"\n\t\t\t C.Protein \t\t D.Cytoplasm "<<endl;
-                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cout<<"\n\n\t\t Which of the following is not part of a bacterial cell"<<endl;
+                        cout<<"\n\t\t A.Nucleus \t\t B.Ribosome "<<endl;
+                        cout<<"\n\t\t C.Protein \t\t D.Cytoplasm "<<endl;
+                        cout<<"\n\t\t\t Your answer is: ";
                         cin>>a[2];
                         if (a[2]=='A')
                         {
@@ -190,10 +193,10 @@ int Science(){
                         
                         case 3:
                         system("cls");
-                        cout<<"\n\n\t\t\t The mitochondrion plays an important role as the cell’s ...."<<endl;
-                        cout<<"\n\t\t\t A. GateKeeper \t\t B. Infection Fighter"<<endl;
-                        cout<<"\n\t\t\t C. Power Plant \t\t D. Molecular tether"<<endl;
-                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cout<<"\n\n\t\t The mitochondrion plays an important role as the cell’s ...."<<endl;
+                        cout<<"\n\t\t A. GateKeeper \t\t B. Infection Fighter"<<endl;
+                        cout<<"\n\t\t C. Power Plant \t D. Molecular tether"<<endl;
+                        cout<<"\n\t\t\t Your answer is: ";
                         cin>>a[3];
                         if (a[3]=='C')
                         {
@@ -204,10 +207,10 @@ int Science(){
                         
                         case 4:
                         system("cls");
-                        cout<<"\n\n\t\t\t Compared to felsic igneous rocks, mafic igneous rocks contain greater amounts of"<<endl;
-                        cout<<"\n\t\t\t A. white quartz \t\t B. Aluminum"<<endl;
-                        cout<<"\n\t\t\t C. pink feldspar\t\t D. Iron"<<endl;
-                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cout<<"\n\n\t\t Compared to felsic igneous rocks, mafic igneous\n\t\t\trocks contain greater amounts of"<<endl;
+                        cout<<"\n\t\t A. white quartz \t\t B. Aluminum"<<endl;
+                        cout<<"\n\t\t C. pink feldspar\t\t D. Iron"<<endl;
+                        cout<<"\n\t\t\t Your answer is: ";
                         cin>>a[4];
                         if (a[4]=='D')
                         {
@@ -217,9 +220,9 @@ int Science(){
                         {break;}
                         case 5:
                         system("cls");cout<<"\n\n\t\t\t What causes night and day?"<<endl;
-                        cout<<"\n\t\t\t A. The earth spins on its axis. \t\t B. The earth moves around the sun."<<endl;
-                        cout<<"\n\t\t\t C. Clouds block out the sun's light.\t\t D. The sun goes around the earth."<<endl;
-                        cout<<"\n\t\t\t\t Your answer is: ";
+                        cout<<"\n   A. The earth spins on its axis.      B. The earth moves around the sun."<<endl;
+                        cout<<"\n   C. Clouds block out the sun's light. D. The sun goes around the earth."<<endl;
+                        cout<<"\n\t\t\t Your answer is: ";
                         cin>>a[5];
                         if (a[5]=='A')
                         {
@@ -282,7 +285,7 @@ int English(){
     do {
           switch(num[i])
           {
-                        case 1:
+                        case 0:
                         cout<<"What is the past tense of the word GO? ";
                         cin>>a[0];
                         if (a[0]=="Went")
@@ -292,7 +295,7 @@ int English(){
                         else
                         {break;}
                         
-                        case 2:
+                        case 1:
                         cout<<"What is the plural form of SHEEP? ";
                         cin>>a[1];
                         if (a[1]=="Sheep")
@@ -302,7 +305,7 @@ int English(){
                         else
                         {break;}
                         
-                        case 3:
+                        case 2:
                         cout<<"What do you call a verb that can function as a noun? ";
                         cin>>a[2];
                         if (a[2]=="Gerund")
@@ -312,7 +315,7 @@ int English(){
                         else
                         {break;}
                         
-                        case 4:
+                        case 3:
                         cout<<"In a broad sense, verbs can either be an action verb or a/an? ";
                         cin>>a[3];
                         if (a[3]=="Linking")
@@ -322,7 +325,7 @@ int English(){
                         else
                         {break;}
                         
-                        case 5:
+                        case 4:
                         cout<<"What is longer than a short story but shorter than a novel? ";
                         cin>>a[4];
                         if (a[4]=="Novelette")
@@ -332,7 +335,7 @@ int English(){
                         else
                         {break;}
                         
-                        case 6:
+                        case 5:
                         cout<<"Who is the author of the classics Romeo and Juliet, and Macbeth?(Surname only)\n";
                         cin>>a[5];
                         if (a[5]=="Shakespeare")
@@ -370,6 +373,7 @@ int main()
 {   mainhome: 
     
     char c;
+    system("cls");
     cout<<"\n\t\t\t  WELCOME TO I.Q TEST GAME \n";
     cout<<"\n\t\t\t ***************************";
     cout<<"\n\t\t\t * Please Select Category  *";
