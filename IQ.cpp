@@ -35,7 +35,7 @@ int Math(){
     i=0;
     ca=0;
     srand (time(0));
-    random_shuffle(num, num+6);
+    random_shuffle(num, num+6); //shuffles the values of an array
     do {
           switch(num[i])
           {
@@ -116,7 +116,7 @@ int Math(){
 int Science(){
     char n[20];
     int i, ca, r;
-    char a[6];
+    char a[6]; //letter
     int num[6]={0,1,2,3,4,5};
     char c;
      system ("cls");
@@ -179,7 +179,7 @@ int Science(){
                         
                         case 2:
                         system("cls");
-                        cout<<"\n\n\t\t Which of the following is not part of a bacterial cell"<<endl;
+                        cout<<"\n\n\t\t Which of the following is not part of a bacterial cell?"<<endl;
                         cout<<"\n\t\t A.Nucleus \t\t B.Ribosome "<<endl;
                         cout<<"\n\t\t C.Protein \t\t D.Cytoplasm "<<endl;
                         cout<<"\n\t\t\t Your answer is: ";
@@ -193,7 +193,7 @@ int Science(){
                         
                         case 3:
                         system("cls");
-                        cout<<"\n\n\t\t The mitochondrion plays an important role as the cell’s ...."<<endl;
+                        cout<<"\n\n\t\t The mitochondrion plays an important role as the cell's ..."<<endl;
                         cout<<"\n\t\t A. GateKeeper \t\t B. Infection Fighter"<<endl;
                         cout<<"\n\t\t C. Power Plant \t D. Molecular tether"<<endl;
                         cout<<"\n\t\t\t Your answer is: ";
@@ -207,7 +207,7 @@ int Science(){
                         
                         case 4:
                         system("cls");
-                        cout<<"\n\n\t\t Compared to felsic igneous rocks, mafic igneous\n\t\t\trocks contain greater amounts of"<<endl;
+                        cout<<"\n\n\t\t Compared to felsic igneous rocks, mafic igneous\n\t\t\trocks contain greater amounts of?"<<endl;
                         cout<<"\n\t\t A. white quartz \t\t B. Aluminum"<<endl;
                         cout<<"\n\t\t C. pink feldspar\t\t D. Iron"<<endl;
                         cout<<"\n\t\t\t Your answer is: ";
@@ -254,7 +254,7 @@ int Science(){
 int English(){
     char n[20];
     int i, ca, r;
-    string a[6];
+    string a[6]; // word
     int num[6]={0,1,2,3,4,5};
     char c;
      system ("cls");
