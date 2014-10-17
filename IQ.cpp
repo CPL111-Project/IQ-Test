@@ -318,7 +318,7 @@ int English(){
                         {break;}
                         
                         case 3:
-                        cout<<"In a broad sense, verbs can either be an action verb or a/an? ";
+                        cout<<"In a broad sense, verbs can either be an action verb or a/an ___ verb. ";
                         cin>>a[3];
                         if (a[3]=="Linking")
                         {
