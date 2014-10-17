@@ -1,7 +1,9 @@
 #include <cstdlib>
 #include <iostream>
 #include <conio.h>
-#include <ctime>
+#include <ctime> // for srand
+#include <algorithm>    // for random_shuffle
+
 using namespace std;
 
 int main();
